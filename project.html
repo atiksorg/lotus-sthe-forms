@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма Material Design</title>
+    <title>Форма в Material Design</title>
     <!-- Подключение Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Подключение Materialize CSS -->
@@ -11,62 +11,86 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="center-align">Форма регистрации</h2>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Имя</label>
+        <h2 class="center-align">Карточка проекта</h2>
+        <div class="card">
+            <div class="card-content">
+                <form>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="project_number" type="number" class="validate" disabled>
+                            <label for="project_number">Номер проекта</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <select class="browser-default">
+                                <option value="" disabled selected>Выберите стадию проекта</option>
+                                <option value="0">Поиск решения для улучшения работы</option>
+                                <option value="1">Замена существующего аппарата</option>
+                                <option value="2">Импортозамещение</option>
+                                <option value="3">ТЭО установки оборудования</option>
+                                <option value="4">Проектные работы</option>
+                                <option value="5">Реализация проекта</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Фамилия</label>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="customer" type="text" class="validate" placeholder="ГАЗПРОМ">
+                            <label for="customer">Заказчик</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="installation_name" type="text" class="validate" placeholder="ГФУ">
+                            <label for="installation_name">Наименование установки</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <select class="browser-default">
+                                <option value="" disabled selected>Выберите тип аппарата</option>
+                                <option value="0">Теплообменник</option>
+                                <option value="1">Подогреватель</option>
+                                <option value="2">Холодильник</option>
+                                <option value="3">Испаритель</option>
+                                <option value="4">Конденсатор</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="position" type="text" class="validate" placeholder="Т-101">
+                            <label for="position">Позиция</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">lock</i>
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Пароль</label>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="purpose" type="text" class="validate" placeholder="Нагрев сетевой воды">
+                            <label for="purpose">Назначение</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="purchase_date" type="text" class="datepicker" placeholder="01.24.2026">
+                            <label for="purchase_date">Плановая дата закупа оборудования</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone" type="tel" class="validate">
-                        <label for="phone">Телефон</label>
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">
+                                Очистить форму
+                                <i class="material-icons right">clear</i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <label>
-                            <input type="checkbox" class="filled-in" />
-                            <span>Согласен с условиями</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 center-align">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">
-                            Зарегистрироваться
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 
     <!-- Подключение Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, {
+                format: 'dd.mm.yyyy',
+                autoClose: true
+            });
+        });
+    </script>
 </body>
 </html>
