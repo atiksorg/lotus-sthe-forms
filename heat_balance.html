@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма загрузки файлов в Material Design</title>
+    <!-- Подключение Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Подключение Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="center-align">Загрузка файлов</h2>
+        <div class="card">
+            <div class="card-content">
+                <form>
+                    <!-- Описание файла -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="file_description" type="text" class="validate" placeholder="Описание файла">
+                            <label for="file_description">Описание файла:</label>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка загрузки файла -->
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="file-field input-field">
+                                <div class="btn">
+                                    <span>Upload</span>
+                                    <input type="file" accept="">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Выберите файл">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка "Загрузить" -->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button class="btn waves-effect waves-light" type="submit">Загрузить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Список загруженных файлов -->
+        <h2 class="center-align">Список загруженных файлов</h2>
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="col s12">
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th>Дата</th>
+                                    <th>Название</th>
+                                    <th>Загрузить</th>
+                                    <th>Архивировать</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Пример строки -->
+                                <tr>
+                                    <td>2023-10-01</td>
+                                    <td>Файл 1</td>
+                                    <td><a href="#" class="btn-small waves-effect waves-light">Загрузить</a></td>
+                                    <td><a href="#" class="btn-small waves-effect waves-light">Архивировать</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h2 class="center-align">Загрузка файлов</h2>
+        <div class="card">
+            <div class="card-content">
+                <form>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Загрузка из базы</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select>
+                                <option value="0">Выберите режим</option>
+                            </select>
+                            <label>Режим</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" placeholder="Фильтр">
+                            <label>Фильтр</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Режимы работы к проекту №24606258</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <table class="striped">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Дата записи</th>
+                                        <th>Наименование</th>
+                                        <th>Q, МВт</th>
+                                        <th>dT, °C</th>
+                                        <th>(Q/dT)*1000</th>
+                                        <th>Загрузить из базы</th>
+                                        <th>Архивировать</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>20 Дек 2024 09:50:50</td>
+                                        <td>Новый аппарат (для новой заявки) тест</td>
+                                        <td>4.82</td>
+                                        <td>89.00</td>
+                                        <td>54 (max)</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>19 Дек 2024 11:07:26</td>
+                                        <td>Новый аппарат (для новой заявки)</td>
+                                        <td>4.82</td>
+                                        <td>89.00</td>
+                                        <td>54 (max)</td>
+                                        <td><button class="btn waves-effect waves-light">Открыть</button></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>19 Дек 2024 10:51:59</td>
+                                        <td>Новый аппарат</td>
+                                        <td>4.82</td>
+                                        <td>89.00</td>
+                                        <td>54 (max)</td>
+                                        <td><button class="btn waves-effect waves-light">Открыть</button></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Выберите способ сведения теплового баланса</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label>
+                                <input name="HB_method" type="radio" value="" />
+                                <span>Экспертами ЛОТОС</span>
+                            </label>
+                        </div>
+                        <div class="col s12">
+                            <label>
+                                <input name="HB_method" type="radio" value="" />
+                                <span>Самостоятельно</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Прикрепите данные для сведения теплового баланса:</h5>
+                            <p>1. Температуры, расходы и давления на все режимы работы</p>
+                            <p>2. Составы сред (компонентный или по заданным свойствам)</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="file-field input-field col s12">
+                            <div class="btn">
+                                <span>Выбрать файл</span>
+                                <input type="file" accept=".zip,.rar,.7z">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="ZIP, RAR, 7Z">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button class="btn waves-effect waves-light" type="submit">Отправить запрос</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Самостоятельно</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h5>Выберите тип сведения теплового баланса:</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label>
+                                <input name="balance_type_rg" type="radio" value="0" />
+                                <span>По известным составам сред</span>
+                            </label>
+                        </div>
+                        <div class="col s12">
+                            <label>
+                                <input name="balance_type_rg" type="radio" value="1" />
+                                <span>По заданным свойствам сред</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button class="btn waves-effect waves-light">Новый режим</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button class="btn waves-effect waves-light">Новый режим (по составам)</button>
+                        </div>
+                        <div class="col s12">
+                            <button class="btn waves-effect waves-light">Новый режим (по свойствам)</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4 class="center-align">Форма для задания параметров</h4>
+        <div class="row">
+            <div class="col s6">
+                <h5>Холодная сторона</h5>
+                <div class="input-field">
+                    <input id="cold_stream_name" type="text" placeholder="Наименование холодного потока">
+                    <label for="cold_stream_name">Наименование холодного потока</label>
+                </div>
+                <div class="input-field">
+                    <select>
+                        <option value="-2">Выберите среду</option>
+                        <option value="0">Вода</option>
+                        <option value="1">Воздух</option>
+                        <option value="2">Этиленгликоль</option>
+                    </select>
+                    <label>Выберите среду</label>
+                </div>
+            </div>
+            <div class="col s6">
+                <h5>Горячая сторона</h5>
+                <div class="input-field">
+                    <input id="hot_stream_name" type="text" placeholder="Наименование горячего потока">
+                    <label for="hot_stream_name">Наименование горячего потока</label>
+                </div>
+                <div class="input-field">
+                    <select>
+                        <option value="-2">Выберите среду</option>
+                        <option value="0">Вода</option>
+                        <option value="1">Воздух</option>
+                        <option value="2">Этиленгликоль</option>
+                    </select>
+                    <label>Выберите среду</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <h5>Составы сред</h5>
+                <div class="input-field">
+                    <input type="text" placeholder="Найти компонент">
+                    <label>Найти компонент</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Найти компонент">
+                    <label>Найти компонент</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <h6>Холодная сторона</h6>
+                <ul class="collection">
+                    <li class="collection-item">
+                        <label>
+                            <input type="checkbox" />
+                            <span>H2O / Water / H2O - 1.000000</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="col s6">
+                <h6>Горячая сторона</h6>
+                <ul class="collection">
+                    <li class="collection-item">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Methane / C1 / CH4 - 0.385900</span>
+                        </label>
+                    </li>
+                    <li class="collection-item">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Ethane / Bimethyl / C2H6 - 0.170100</span>
+                        </label>
+                    </li>
+                    <li class="collection-item">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Propane / C3 / C3H8 - 0.165100</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <h6>Фракционный состав (с накопительным итогом)</h6>
+                <div class="input-field">
+                    <input type="number" placeholder="Температура выкипания, °С">
+                    <label>Температура выкипания, °С</label>
+                </div>
+                <div class="input-field">
+                    <input type="number" placeholder="Концентрация">
+                    <label>Концентрация</label>
+                </div>
+                <button class="btn waves-effect waves-light">+</button>
+                <button class="btn waves-effect waves-light">-</button>
+            </div>
+            <div class="col s6">
+                <h6>Фракционный состав (с накопительным итогом)</h6>
+                <div class="input-field">
+                    <input type="number" placeholder="Температура выкипания, °С">
+                    <label>Температура выкипания, °С</label>
+                </div>
+                <div class="input-field">
+                    <input type="number" placeholder="Концентрация">
+                    <label>Концентрация</label>
+                </div>
+                <button class="btn waves-effect waves-light">+</button>
+                <button class="btn waves-effect waves-light">-</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <h5>Пакет свойств</h5>
+                <div class="input-field">
+                    <select>
+                        <option value="-2">Укажите пакет свойств</option>
+                        <option value="0">prsv</option>
+                        <option value="1">nrtl</option>
+                        <option value="2">if97pkg</option>
+                        <option value="3">glycolpkg</option>
+                        <option value="4">acidgaspkg</option>
+                    </select>
+                    <label>Выберите пакет свойств</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <button class="btn waves-effect waves-light">Очистить форму</button>
+                <button class="btn waves-effect waves-light">Пример заполнения</button>
+            </div>
+        </div>
+    </div>
+
+  
+    <!-- Подключение Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
